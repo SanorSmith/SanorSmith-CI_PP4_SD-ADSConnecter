@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 
 class CustomUserCreationForm(UserCreationForm):
@@ -20,3 +20,7 @@ class CustomUserCreationForm(UserCreationForm):
         if User.objects.filter(username=username).exists():
             raise forms.ValidationError("This username is already taken.")
         return username
+    
+class CustomAuthenticationForm(AuthenticationForm):
+    username = forms.CharField(label='Username or Email', max_length=254)
+    password = forms.CharField(label='Password', widget=forms.PasswordInput)
