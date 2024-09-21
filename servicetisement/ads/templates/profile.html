@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2>Your Profile</h2>
+    <p>Username: {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+
+    <h3>Your Services</h3>
+    <div class="grid-container">
+        {% for service in user_services %}
+        <div class="card">
+            <div class="img-container">
+                <img src="{{ service.featured_image.url }}" alt="{{ service.title }}">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ service.title }}</h5>
+                <p class="card-text">{{ service.description }}</p>
+                <p class="card-text"><strong>Occupation:</strong> {{ service.occupation }}</p>
+                <p class="card-text"><strong>Contact Info:</strong> {{ service.contact_info }}</p>
+                <div class="card-actions">
+                    <a href="{% url 'update_service' service.id %}" class="btn btn-secondary">Edit</a>
+                    <a href="{% url 'remove_service' service.id %}" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <a href="{% url 'add_service' %}" class="btn btn-primary mt-3">Add New Service</a>
+</div>
+{% endblock %}
