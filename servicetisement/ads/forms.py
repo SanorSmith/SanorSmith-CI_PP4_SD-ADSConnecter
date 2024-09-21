@@ -39,3 +39,6 @@ class ServiceUpdateForm(forms.ModelForm):
     class Meta:
         model = Service
         fields = ['title', 'description', 'occupation', 'contact_info', 'featured_image']        
+        
+class ServiceDeleteForm(forms.Form):
+    service_id = forms.IntegerField()        
