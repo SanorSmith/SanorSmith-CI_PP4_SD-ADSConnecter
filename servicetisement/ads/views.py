@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
-from .forms import CustomUserCreationForm, ServiceForm
+from .forms import CustomUserCreationForm, ServiceForm, ServiceUpdateForm
 from .models import Service
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404
 # Create your views here.
 
 def home(request):
@@ -80,3 +81,25 @@ def available_services(request):
         services = Service.objects.all()
     occupations = Service.objects.values_list('occupation', flat=True).distinct()
     return render(request, 'available_services.html', {'services': services, 'occupations': occupations})
+
+@login_required
+def update_service(request, service_id):
+    service = get_object_or_404(Service, id=service_id)
+    if request.method == 'POST':
+        form = ServiceUpdateForm(request.POST, request.FILES, instance=service)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Service updated successfully.')
+            return redirect('available_services')
+    else:
+        form = ServiceUpdateForm(instance=service)
+    return render(request, 'edit_service.html', {'form': form})
+
+@login_required
+def remove_service(request, service_id):
+    service = get_object_or_404(Service, id=service_id, ads_author=request.user)
+    if request.method == 'POST':
+        service.delete()
+        messages.success(request, 'Service removed successfully.')
+        return redirect('available_services')
+    return render(request, 'remove_service.html', {'service': service})
