@@ -7,6 +7,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
+from django.core.paginator import Paginator
 # Create your views here.
 
 def home(request):
@@ -73,14 +74,18 @@ def add_service(request):
         form = ServiceForm()
     return render(request, 'add_service.html', {'form': form})
 
+from django.core.paginator import Paginator
+
 def available_services(request):
     occupation = request.GET.get('occupation')
-    if occupation:
-        services = Service.objects.filter(occupation=occupation)
-    else:
-        services = Service.objects.all()
+    services = Service.objects.filter(occupation=occupation) if occupation else Service.objects.all()
+
+    paginator = Paginator(services, 10)  # Show 10 services per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     occupations = Service.objects.values_list('occupation', flat=True).distinct()
-    return render(request, 'available_services.html', {'services': services, 'occupations': occupations})
+    return render(request, 'available_services.html', {'page_obj': page_obj, 'occupations': occupations})
 
 @login_required
 def update_service(request, service_id):
