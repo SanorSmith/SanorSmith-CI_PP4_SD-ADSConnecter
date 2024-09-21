@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from .forms import CustomUserCreationForm, ServiceForm
+from .models import Service
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -70,3 +71,12 @@ def add_service(request):
     else:
         form = ServiceForm()
     return render(request, 'add_service.html', {'form': form})
+
+def available_services(request):
+    occupation = request.GET.get('occupation')
+    if occupation:
+        services = Service.objects.filter(occupation=occupation)
+    else:
+        services = Service.objects.all()
+    occupations = Service.objects.values_list('occupation', flat=True).distinct()
+    return render(request, 'available_services.html', {'services': services, 'occupations': occupations})
