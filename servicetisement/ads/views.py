@@ -103,3 +103,8 @@ def remove_service(request, service_id):
         messages.success(request, 'Service removed successfully.')
         return redirect('available_services')
     return render(request, 'remove_service.html', {'service': service})
+
+@login_required
+def operations(request):
+    user_services = Service.objects.filter(ads_author=request.user)
+    return render(request, 'operations.html', {'user_services': user_services})
