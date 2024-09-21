@@ -17,8 +17,30 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import render
+from ads import views as ads_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('ads.urls')),  
+    path('trigger-400/', ads_views.trigger_400),
+    path('trigger-403/', ads_views.trigger_403),
+    path('trigger-500/', ads_views.trigger_500),
 ]
+
+def custom_page_not_found(request, exception):
+    return render(request, '404.html', status=404)
+
+def custom_bad_request(request, exception):
+    return render(request, '400.html', status=400)
+
+def custom_permission_denied(request, exception):
+    return render(request, '403.html', status=403)
+
+def custom_server_error(request):
+    return render(request, '500.html', status=500)
+
+handler400 = 'servicetisement.urls.custom_bad_request'
+handler403 = 'servicetisement.urls.custom_permission_denied'
+handler404 = 'servicetisement.urls.custom_page_not_found'
+handler500 = 'servicetisement.urls.custom_server_error'
