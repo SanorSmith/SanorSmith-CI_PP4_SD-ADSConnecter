@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-1">400</h1>
+        <p class="lead">Bad Request. The server could not understand the request.</p>
+        <a href="{% url 'home' %}" class="btn btn-primary mt-3 mb-5">Go to Homepage</a>
+    </div>
+</div>
+{% endblock %}
