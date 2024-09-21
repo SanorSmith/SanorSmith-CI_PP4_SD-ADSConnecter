@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ServiceTisement</title>
-</head>
-<body>
-    <h1>Welcome to ServiceTisement</h1>
-    <p>This is the home page.</p>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Home - ServiceTisement{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to ServiceTisement</h1>
+    <p class="lead">Find or offer services easily!</p>
+</div>
+{% endblock %}
