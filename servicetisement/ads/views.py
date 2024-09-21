@@ -113,3 +113,9 @@ def remove_service(request, service_id):
 def operations(request):
     user_services = Service.objects.filter(ads_author=request.user)
     return render(request, 'operations.html', {'user_services': user_services})
+
+
+@login_required
+def profile(request):
+    user_services = Service.objects.filter(ads_author=request.user)
+    return render(request, 'profile.html', {'user_services': user_services})
