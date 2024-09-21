@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator
+from django.core.exceptions import SuspiciousOperation, PermissionDenied
 # Create your views here.
 
 def home(request):
@@ -119,3 +120,16 @@ def operations(request):
 def profile(request):
     user_services = Service.objects.filter(ads_author=request.user)
     return render(request, 'profile.html', {'user_services': user_services})
+
+def custom_page_not_found_view(request, exception):
+    return render(request, '404.html', {}, status=404)
+
+# Trigger error views for testing
+def trigger_400(request):
+    raise SuspiciousOperation("Bad Request")
+
+def trigger_403(request):
+    raise PermissionDenied("Forbidden")
+
+def trigger_500(request):
+    raise Exception("Internal Server Error")
