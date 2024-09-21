@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+from .models import Service, ServiceCategory
 
 class CustomUserCreationForm(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -24,3 +25,10 @@ class CustomUserCreationForm(UserCreationForm):
 class CustomAuthenticationForm(AuthenticationForm):
     username = forms.CharField(label='Username or Email', max_length=254)
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
+
+class ServiceForm(forms.ModelForm):
+    occupation = forms.ModelChoiceField(queryset=ServiceCategory.objects.all(), label="Service Category")
+
+    class Meta:
+        model = Service
+        fields = ['title', 'description', 'occupation', 'contact_info', 'featured_image']    
