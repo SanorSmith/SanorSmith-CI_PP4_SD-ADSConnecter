@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, ServiceForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def home(request):
@@ -53,3 +54,19 @@ def sign_in(request):
 def sign_out(request):
     logout(request)
     return redirect('home')
+
+@login_required
+def add_service(request):
+    if request.method == 'POST':
+        form = ServiceForm(request.POST, request.FILES)
+        if form.is_valid():
+            service = form.save(commit=False)
+            service.ads_author = request.user
+            service.save()
+            messages.success(request, 'Service added successfully.')
+            return redirect('available_services')
+        else:
+            messages.error(request, 'Please correct the errors below.')
+    else:
+        form = ServiceForm()
+    return render(request, 'add_service.html', {'form': form})
