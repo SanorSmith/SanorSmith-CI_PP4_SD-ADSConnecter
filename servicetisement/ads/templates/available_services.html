@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2>Available Services</h2>
+    <form method="GET" action="{% url 'available_services' %}">
+        <div class="form-group">
+            <label for="occupation">Filter by Occupation:</label>
+            <select name="occupation" id="occupation" class="form-control" onchange="this.form.submit()">
+                <option value="">All Occupations</option>
+                {% for occupation in occupations %}
+                    <option value="{{ occupation }}" {% if request.GET.occupation == occupation %}selected{% endif %}>{{ occupation }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </form>
+
+    <div class="grid-container">
+        {% for service in services %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ service.title }}</h5>
+                <p class="card-text">{{ service.description }}</p>
+                <p class="card-text"><strong>Occupation:</strong> {{ service.occupation }}</p>
+                <p class="card-text"><strong>Contact Info:</strong> {{ service.contact_info }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
