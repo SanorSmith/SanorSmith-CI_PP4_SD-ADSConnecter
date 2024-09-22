@@ -117,6 +117,18 @@ def operations(request):
 
 
 @login_required
+def delete_account(request):
+    user = request.user
+    if request.method == 'POST':
+        # Delete all related services
+        Service.objects.filter(ads_author=user).delete()
+        # Delete user account
+        user.delete()
+        messages.success(request, 'Your account and all related services have been deleted.')
+        return redirect('home')
+    return render(request, 'delete_account.html')
+
+@login_required
 def profile(request):
     user_services = Service.objects.filter(ads_author=request.user)
     return render(request, 'profile.html', {'user_services': user_services})
