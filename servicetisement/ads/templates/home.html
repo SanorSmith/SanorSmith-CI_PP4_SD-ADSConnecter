@@ -1,10 +1,63 @@
 {% extends 'base.html' %}
-
-{% block title %}Home - ServiceTisement{% endblock %}
-
+{% load static %}
 {% block content %}
-<div class="jumbotron">
-    <h1 class="display-4">Welcome to ServiceTisement</h1>
-    <p class="lead">Find or offer services easily!</p>
+<div class="container mt-4">
+    <!-- Section 1: Connecting Professionals with Clients -->
+    <div class="row mb-4 p-3 rounded margin-card bg-light">
+        <div class="col-md-6 bg-connection">
+            <!-- Background image set in CSS -->
+        </div>
+        <div class="col-md-6 d-flex align-items-center">
+            <div>
+                <h2>Connecting Professionals with Clients</h2>
+                <p>Find the Best Service Providers. ServiceTisement helps clients find trusted professionals for various needs. From construction to interior design, we list verified experts ready to deliver top-quality services.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Showcase Your Services -->
+    <div class="row mb-4 p-3 rounded margin-card bg-light">
+        <div class="col-md-6 order-md-2 bg-showcase">
+            <!-- Background image set in CSS -->
+        </div>
+        <div class="col-md-6 order-md-1 d-flex align-items-center">
+            <div>
+                <h2>Showcase Your Services</h2>
+                <p>Advertise Your Skills. As a professional, showcase your skills and services to a broad audience. Create detailed listings with images, descriptions, and contact information to attract potential clients.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3: Simplified Search and Filter -->
+    <div class="row mb-4 p-3 rounded margin-card bg-light">
+        <div class="col-md-6 bg-search">
+            <!-- Background image set in CSS -->
+        </div>
+        <div class="col-md-6 d-flex align-items-center">
+            <div>
+                <h2>Simplified Search and Filter</h2>
+                <p>Find Exactly What You Need. Our advanced search and filter options help clients quickly find the services they need. Filter by category, location, and more to connect with the right professionals effortlessly.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 4: User-Friendly Interface -->
+    <div class="row mb-4 p-3 rounded margin-card bg-light">
+        <div class="col-md-6 order-md-2 bg-interface">
+            <!-- Background image set in CSS -->
+        </div>
+        <div class="col-md-6 order-md-1 d-flex align-items-center">
+            <div>
+                <h2>User-Friendly Interface</h2>
+                <p>Easy and Intuitive Experience. ServiceTisement offers a user-friendly interface that simplifies the process for both clients and professionals. Manage your listings, track responses, and communicate seamlessly within our platform.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="text-center row mb-4 p-3 rounded margin-card bg-light">
+        <h2>Join ServiceTisement Today!</h2>
+        <p>Whether you’re looking to advertise your services or find the best professionals, ServiceTisement is your go-to platform for all service-related needs. Sign up now and start connecting!</p>
+    </div>
 </div>
 {% endblock %}
