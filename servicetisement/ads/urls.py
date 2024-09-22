@@ -12,4 +12,5 @@ urlpatterns = [
     path('remove-service/<int:service_id>/', views.remove_service, name='remove_service'),
     path('operations/', views.operations, name='operations'),
     path('profile/', views.profile, name='profile'),
+    path('delete-account/', views.delete_account, name='delete_account'),
 ]
