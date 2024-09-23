@@ -145,3 +145,17 @@ def trigger_403(request):
 
 def trigger_500(request):
     raise Exception("Internal Server Error")
+
+
+def add_service_form(request):
+    """Displays the form to add a new service."""
+    form = ServiceForm()
+    if request.method == 'POST':
+        form = ServiceForm(request.POST, request.FILES)
+        if form.is_valid():
+            service = form.save(commit=False)
+            service.ads_author = request.user
+            service.save()
+            messages.success(request, 'Service added successfully.')
+            return redirect('operations')
+    return render(request, 'partials/add_service_form.html', {'form': form})
