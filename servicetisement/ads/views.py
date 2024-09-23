@@ -159,3 +159,17 @@ def add_service_form(request):
             messages.success(request, 'Service added successfully.')
             return redirect('operations')
     return render(request, 'partials/add_service_form.html', {'form': form})
+
+def edit_service_form(request, service_id):
+    """Displays the form to edit an existing service."""
+    service = get_object_or_404(Service, id=service_id)
+    form = ServiceUpdateForm(instance=service)
+    
+    if request.method == 'POST':
+        form = ServiceUpdateForm(request.POST, request.FILES, instance=service)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Service updated successfully.')
+            return redirect('operations')
+    
+    return render(request, 'partials/edit_service_form.html', {'form': form, 'service_id': service_id})
