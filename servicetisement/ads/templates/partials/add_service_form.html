@@ -1,0 +1,25 @@
+{% load static %}
+<form method="POST" action="{% url 'add_service' %}" enctype="multipart/form-data" class="highlight-box">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form.title.label_tag }}
+        {{ form.title }}
+    </div>
+    <div class="form-group">
+        {{ form.description.label_tag }}
+        {{ form.description }}
+    </div>
+    <div class="form-group">
+        {{ form.occupation.label_tag }}
+        {{ form.occupation }}
+    </div>
+    <div class="form-group">
+        {{ form.contact_info.label_tag }}
+        {{ form.contact_info }}
+    </div>
+    <div class="form-group">
+        {{ form.featured_image.label_tag }}
+        {{ form.featured_image }}
+    </div>
+    <button type="submit" class="btn btn-center btn-primary">Add</button>
+</form>
