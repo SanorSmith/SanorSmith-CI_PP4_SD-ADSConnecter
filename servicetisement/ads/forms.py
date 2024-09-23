@@ -42,3 +42,14 @@ class ServiceUpdateForm(forms.ModelForm):
         
 class ServiceDeleteForm(forms.Form):
     service_id = forms.IntegerField()        
+    
+class ServiceForm(forms.ModelForm):
+    occupation = forms.ModelChoiceField(
+        queryset=ServiceCategory.objects.all(), 
+        label="Service Category",
+        empty_label="Select a category"
+    )
+
+    class Meta:
+        model = Service
+        fields = ['title', 'description', 'occupation', 'contact_info', 'featured_image']
