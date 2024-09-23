@@ -134,7 +134,7 @@ cloudinary.config(
 # Configure Cloudinary as the storage backend for static and media files
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
+CLOUDINARY_STATIC_URL = f"https://res.cloudinary.com/{os.environ.get('CLOUDINARY_CLOUD_NAME')}/raw/upload/v1722366518/static/"
 MEDIA_URL = '/media/'
 
 # Default primary key field type
