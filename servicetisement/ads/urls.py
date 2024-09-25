@@ -13,6 +13,6 @@ urlpatterns = [
     path('operations/', views.operations, name='operations'),
     path('profile/', views.profile, name='profile'),
     path('delete-account/', views.delete_account, name='delete_account'),
-        path('add-service-form/', views.add_service_form, name='add_service_form'),
+    path('add-service-form/', views.add_service_form, name='add_service_form'),
     path('edit-service-form/<int:service_id>/', views.edit_service_form, name='edit_service_form'),
 ]

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from .forms import CustomUserCreationForm, ServiceForm, ServiceUpdateForm
@@ -6,7 +6,7 @@ from .models import Service
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import get_object_or_404
+from django.http import HttpResponse
 from django.core.paginator import Paginator
 from django.core.exceptions import SuspiciousOperation, PermissionDenied
 # Create your views here.
@@ -103,12 +103,13 @@ def update_service(request, service_id):
 
 @login_required
 def remove_service(request, service_id):
-    service = get_object_or_404(Service, id=service_id, ads_author=request.user)
+    """Handles the direct removal of a service."""
     if request.method == 'POST':
+        service = get_object_or_404(Service, id=service_id, ads_author=request.user)
         service.delete()
         messages.success(request, 'Service removed successfully.')
-        return redirect('available_services')
-    return render(request, 'remove_service.html', {'service': service})
+        return redirect('operations')
+    return HttpResponse(status=405)
 
 @login_required
 def operations(request):
