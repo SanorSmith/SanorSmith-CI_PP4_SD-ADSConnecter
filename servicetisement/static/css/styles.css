@@ -29,6 +29,21 @@ body {
     box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.3);
 }
 
+.hero {
+    background-image: url('https://res.cloudinary.com/dxawpgmpj/image/upload/static/images/hero.e72bfcb01309.webp');
+    background-color: rgb(255, 255, 255);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 190vh;
+    width: 100vw;
+}
+
+.wellcome-container {
+    padding-top: 10px;
+    margin: 10px;
+}
+
 .btn-black {
     background-color: black;
     color: white;
@@ -49,6 +64,20 @@ body {
     color: red;
     text-shadow: 2px 2px 5px black;
 }
+
+/* Enhanced card styles */
+.card {
+    border: 1px solid #e0e0e0; /* Lighter border */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Softer shadow */
+    padding: 15px; /* Added padding */
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25); /* Enhanced hover effect */
+}
+
 
 .favsize {
     font-size: 2rem;    
