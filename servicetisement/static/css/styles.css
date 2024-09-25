@@ -1,0 +1,52 @@
+/* Background image styles for the home page sections */
+.bg-connection {
+    background-image: url('https://res.cloudinary.com/dxawpgmpj/raw/upload/v1722365342/static/images/connection.webp');
+    background-size: cover;
+    background-position: center;
+    height: 300px; 
+    border-radius: 15px 70px 30px;
+}
+
+.bg-showcase {
+    background-image: url('https://res.cloudinary.com/dxawpgmpj/raw/upload/v1722365344/static/images/showcase.webp');
+    background-size: cover;
+    background-position: center;
+    height: 300px; 
+    border-radius: 70px 15px 50px 15px;
+}
+
+.bg-search {
+    background-image: url('https://res.cloudinary.com/dxawpgmpj/raw/upload/v1722365344/static/images/search.webp');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    border-radius: 15px 70px 30px;
+}
+
+.bg-interface {
+    background-image: url('https://res.cloudinary.com/dxawpgmpj/raw/upload/v1722365345/static/images/interface.webp');
+    background-size: cover;
+    background-position: center;
+    height: 300px; 
+    border-radius: 70px 15px 50px 15px;
+}
+
+/* Additional styling for rounded corners and image display */
+.margin-card {
+    margin: 20px 0;
+}
+
+.bg-light {
+    background-color: #f8f9fa;
+}
+
+p {
+    font-size: 16px;
+    color: #000000;
+}
+
+h2 {
+    font-family: 'Arial', sans-serif;
+    color: #000000;
+}
+
