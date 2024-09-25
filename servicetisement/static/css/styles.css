@@ -1,4 +1,56 @@
-/* Background image styles for the home page sections */
+body {
+    padding-top: 70px;
+}
+
+.logo {
+    background-image: url('https://res.cloudinary.com/YOUR_CLOUD_NAME/raw/upload/v1722365341/static/favicon/$T-favicon.webp');
+    background-size: cover;
+    background-position: center;
+    height: 40px; 
+    width: 40px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.navbar-br {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #000000;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+.nav-shadow {
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.3);
+}
+
+.highlight-text {
+    color: red;
+    text-shadow: 2px 2px 5px black;
+}
+
+.favsize {
+    font-size: 2rem;    
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #ffffff;
+}
+
+.footer-bk-color {
+    background-color: rgb(179, 3, 3);
+}
+
+.fab {
+    color: #ffffff;
+}
+
 .bg-connection {
     background-image: url('https://res.cloudinary.com/dxawpgmpj/raw/upload/v1722365342/static/images/connection.webp');
     background-size: cover;
