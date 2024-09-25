@@ -118,6 +118,10 @@ def remove_service(request, service_id):
 
 @login_required
 def operations(request):
+    if not request.user.is_authenticated:
+        request.session['has_expired'] = True  # Set a session flag
+        return redirect('sign_in')
+
     user_services = Service.objects.filter(ads_author=request.user)
     return render(request, 'operations.html', {'user_services': user_services})
 
