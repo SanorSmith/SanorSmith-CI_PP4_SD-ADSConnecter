@@ -47,9 +47,14 @@ def sign_in(request):
 
         if user is not None:
             login(request, user)
-            return redirect('home')
+            return redirect('operations')
         else:
             messages.error(request, 'Invalid username/email or password.')
+    else:
+        # Check if redirected due to an expired session
+        if not request.user.is_authenticated and request.session.get('has_expired'):
+            messages.warning(request, 'Your session has expired. Please log in again.')
+            request.session['has_expired'] = False  # Clear the flag
 
     form = AuthenticationForm()
     return render(request, 'sign_in.html', {'form': form})
