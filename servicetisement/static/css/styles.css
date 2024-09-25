@@ -183,3 +183,46 @@ p {
 .bg-light {
     background-color: #f8f9fa;
 }
+
+/* Media query for 375px width screens */
+@media (min-width: 375px) and (orientation: portrait) {
+    .hero {
+        height: 140vh;
+    }
+}
+
+/* Media query for 550px width screens */
+@media (min-width: 550px) and (orientation: portrait) {
+    .hero {
+        height: 140vh;
+    }
+
+    .wellcome-container {
+        width: 400px;
+        margin-left: 100px;
+    }
+}
+
+/* Media query for 810px width portrait screens */
+@media (min-width: 810px) and (orientation: portrait) {
+    .hero {
+        height: 110vh;
+    }
+
+    .wellcome-container {
+        width: 400px;
+        margin-left: 100px;
+    }
+}
+
+/* Media query for 1080px width portrait screens */
+@media (min-width: 1080px) and (orientation: portrait) {
+    .hero {
+        height: 80vh;
+    }
+
+    .wellcome-container {
+        width: 400px;
+        margin-left: 100px;
+    }
+}
