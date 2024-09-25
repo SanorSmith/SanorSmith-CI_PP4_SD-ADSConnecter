@@ -1,17 +1,17 @@
-
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-<<div class="container mt-4">
+<div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center">
         <h2>Manage Your Services</h2>
         <button type="button" class="btn btn-primary" onclick="showAddService()">Add New Service</button>
     </div>
-    
+
     <div class="grid-container mt-4">
         {% for service in user_services %}
         <div class="card">
             <div class="img-container">
-                <img src="{{ service.featured_image.url }}" alt="{{ service.title }}">
+                <img src="{{ service.featured_image.url }}" alt="{{ service.title }}" class="card-img-top">
             </div>
             <div class="card-body">
                 <h5 class="card-title">{{ service.title }}</h5>
@@ -21,22 +21,28 @@
                     <p class="card-text"><strong>Contact Info:</strong> {{ service.contact_info }}</p>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn btn-secondary" onclick="showEditService(this)" data-id="{{ service.id }}">Edit</button>
-                    <button type="button" class="btn btn-danger" onclick="showRemoveService(this)" data-id="{{ service.id }}">Remove</button>
+                    <!-- Edit Button -->
+                    <a href="{% url 'edit_service_form' service.id %}" class="btn btn-secondary">Edit</a>
+
+                    <!-- Remove Service Form -->
+                    <form method="POST" action="{% url 'remove_service' service.id %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this service?');">Remove</button>
+                    </form>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
 
-    <div id="operation-form" class="mt-4">
-        <!-- Forms will be injected here by JavaScript -->
-    </div>
+    <!-- Add/Edit service form will be injected here via JavaScript -->
+    <div id="operation-form" class="mt-4"></div>
 </div>
 
+<!-- JavaScript Functions for Add/Edit Forms -->
 <script>
 function showAddService() {
-    fetch("{% url 'add_service_form' %}")  // Updated URL
+    fetch("{% url 'add_service_form' %}")
         .then(response => response.text())
         .then(html => {
             document.getElementById('operation-form').innerHTML = html;
@@ -46,7 +52,7 @@ function showAddService() {
 
 function showEditService(button) {
     const serviceId = button.getAttribute('data-id');
-    fetch(`/edit-service-form/${serviceId}/`)  // Updated URL
+    fetch(`/edit-service-form/${serviceId}/`)
         .then(response => response.text())
         .then(html => {
             document.getElementById('operation-form').innerHTML = html;
