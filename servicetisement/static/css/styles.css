@@ -66,6 +66,17 @@ body {
     color: white;
 }
 
+.wellcome-text {
+    text-align: left;
+    margin-left: 0px;
+}
+
+.wellcome-container {
+    padding-top: 10px;
+    margin: 10px;
+}
+
+
 .highlight-text {
     color: red;
     text-shadow: 2px 2px 5px black;
