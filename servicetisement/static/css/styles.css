@@ -320,3 +320,40 @@ form.highlight-box .form-group select {
         margin-left: 100px;
     }
 }
+
+/* Media query for 550px width landscape screens */
+@media (min-width: 550px) and (orientation: landscape) {
+    .hero {
+        height: 280vh;
+    }
+
+    .wellcome-container {
+        width: 400px;
+        margin-left: 100px;
+    }
+}
+
+/* Media query for 810px width landscape screens */
+@media (min-width: 810px) and (orientation: landscape) {
+    .hero {
+        height: 230vh;
+    }
+
+    .wellcome-container {
+        width: 400px;
+        margin-left: 100px;
+    }
+}
+
+/* Media query for 1080px width landscape screens */
+@media (min-width: 1080px) and (orientation: landscape) {
+    .hero {
+        background-image: url('https://res.cloudinary.com/dxawpgmpj/raw/upload/v1722365345/static/images/hero.webp');
+        height: 120vh;
+    }
+
+    .wellcome-container {
+        width: 600px;
+        margin: 10px 0px 0px 150px;
+    }
+}
