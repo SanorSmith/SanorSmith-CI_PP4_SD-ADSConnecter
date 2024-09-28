@@ -82,9 +82,20 @@ def add_service(request):
 
 from django.core.paginator import Paginator
 
+from django.db.models import Q
+
 def available_services(request):
     occupation = request.GET.get('occupation')
-    services = Service.objects.filter(occupation=occupation) if occupation else Service.objects.all()
+    query = request.GET.get('q')  # Get the search query from the form input
+    
+    # Apply filtering based on search query and occupation
+    services = Service.objects.all()
+    
+    if occupation:
+        services = services.filter(occupation=occupation)
+
+    if query:
+        services = services.filter(Q(title__icontains=query) | Q(description__icontains=query))
 
     paginator = Paginator(services, 10)  # Show 10 services per page
     page_number = request.GET.get('page')

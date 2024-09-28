@@ -3,7 +3,7 @@ body {
 }
 
 .logo {
-    background-image: url('https://res.cloudinary.com/YOUR_CLOUD_NAME/raw/upload/v1722365341/static/favicon/$T-favicon.webp');
+    background-image: url('https://res.cloudinary.com/dxawpgmpj/raw/upload/v1722365341/static/favicon/%24T-favicon.webp');
     background-size: cover;
     background-position: center;
     height: 40px; 
