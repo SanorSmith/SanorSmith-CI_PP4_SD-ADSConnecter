@@ -43,7 +43,7 @@ ROOT_URLCONF = 'servicetisement.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR],
+        'DIRS': [os.path.join(BASE_DIR, 'ads/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
