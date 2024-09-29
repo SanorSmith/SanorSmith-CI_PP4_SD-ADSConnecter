@@ -4,7 +4,7 @@
 
 💻 [Visit Live Website](https://ads2024-b8f5bf8e98be.herokuapp.com/)
 
-![Mockup image](docs/readme/advertisement-service-mockup.jpg)
+![Mockup image](docs/features/feature-home-page.jpg)
 
 ## Table of Contents
 - [About](#about)
