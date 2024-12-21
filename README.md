@@ -191,27 +191,83 @@ The structure utilizes Django's templating system, with `base.html` as the found
 
 #### Database
 
+<details><summary>Physical database model</summary>
+<img src="docs/flow-diagram.jpeg">
+</details
+
 - The backend uses Django with PostgreSQL for data management in the deployed version.
 - Two main models represent the structure of the data stored in PostgreSQL, mimicking the database's contents.
 
 
 The models representing the website's database structure are:
 
-##### User Model
-- Part of Django's built-in authentication system.
-- Manages user-related information (username, email, password, etc.).
+#### User Model (Django's Built-In Model)
+
+The `User` model is part of Django's built-in authentication system. It is used to handle essential user-related information like **username**, **email**, **password**, and account management fields such as **date_joined** and **last_login**.
+
+##### Fields:
+
+| Name          | Database Key   | Field Type    | Validation |
+| ------------- | -------------  | ------------- | ---------- |
+| username      | username       | CharField     | max_length=150, unique=True |
+| email         | email          | EmailField    | max_length=254, unique=True |
+| password      | password       | CharField     | max_length=128 |
+| first_name    | first_name     | CharField     | max_length=30  |
+| last_name     | last_name      | CharField     | max_length=30  |
+| date_joined   | date_joined    | DateTimeField | auto_now_add=True |
+| last_login    | last_login     | DateTimeField | auto_now=True  |
+
+##### Overview:
+
+- **`username`**: The unique identifier for the user.
+- **`email`**: A unique email address for the user, used for communication and identification.
+- **`password`**: The user’s password, stored securely.
+- **`first_name`** and **`last_name`**: Optional fields for the user's name.
+- **`date_joined`**: Automatically records when the user first created their account.
+- **`last_login`**: Automatically updated to track the last time the user logged in.
+
+This model provides a foundation for user authentication and management, allowing for login, password reset, and account creation features, as well as support for authentication backends and third-party integrations.
+
+---
 
 ##### UserProfile Model
-- Contains additional user details: bio and contact_info.
-- Has a one-to-one relationship with the User model.
+- The `UserProfile` model extends the `User` model using a **one-to-one relationship**. This model contains additional details related to the user, such as `bio` and `contact_info`, allowing for richer user profiles.
+
+| Name            | Database Key   | Field Type      | Validation |
+|-----------------|----------------|-----------------|------------|
+| user            | user           | OneToOneField   | User, on_delete=models.CASCADE |
+| bio             | bio            | TextField       | blank=True |
+| contact_info    | contact_info   | CharField       | max_length=255, blank=True |
+
+- The `UserProfile` model allows for enhanced user information storage, including optional fields like `bio` and `contact_info`, which are beneficial for the application but are not mandatory.
+
 
 ##### Service Model
-- Stores service details with fields: title, description, occupation, contact_info, featured_image, created_at, and updated_at.
-- Has a foreign key relationship with User, representing the service author.
+- The `Service` model stores information about services offered by users. This model includes essential fields such as the `title`, `description`, `occupation`, and an image to represent the service. Additionally, it links each service to the user who posted it using a **foreign key** relationship.
+
+| Name            | Database Key   | Field Type      | Validation |
+|-----------------|----------------|-----------------|------------|
+| ads_author      | ads_author     | ForeignKey      | User, on_delete=models.CASCADE |
+| title           | title          | CharField       | max_length=200 |
+| description     | description    | TextField       |             |
+| occupation      | occupation     | CharField       | max_length=100 |
+| contact_info    | contact_info   | CharField       | max_length=255 |
+| featured_image  | featured_image | CloudinaryField | default='placeholder' |
+| created_at      | created_at     | DateTimeField   | auto_now_add=True |
+| updated_at      | updated_at     | DateTimeField   | auto_now=True |
+
+- The `Service` model facilitates the posting of services, including the necessary information to describe the service, such as its title, description, and category. The `featured_image` field stores images for each service using **Cloudinary**.
 
 ##### ServiceCategory Model
-- Represents different categories for services.
-- Contains a single `name` field that defines the service category.
+- The `ServiceCategory` model represents the different categories that services can be grouped under, helping users to filter and categorize services on the platform. This model includes a `name` field that defines the service category.
+
+| Name            | Database Key   | Field Type      | Validation |
+|-----------------|----------------|-----------------|------------|
+| name            | name           | CharField       | max_length=100 |
+
+- The `ServiceCategory` model allows for the organization of services into different types or categories. Each service can be linked to one or more categories to help users easily find services related to their specific needs.
+
+---
 
 These models provide the fundamental data structure for user profiles, service listings, and service categorization, ensuring efficient data handling and retrieval within the application.
 
@@ -226,7 +282,7 @@ These models provide the fundamental data structure for user profiles, service l
 - **JavaScript** - For interactive elements.
 - **Python 3.10** - Backend programming language.
 - **Django 5.1** - Web framework for backend logic and database management.
-
+- **Graphviz** - Generate the ER Diagram for the models.
 ### Libraries & Tools
 
 - [Bootstrap 4.5](https://getbootstrap.com/) - Used for responsive UI components (e.g., Navbar, Forms, Buttons).

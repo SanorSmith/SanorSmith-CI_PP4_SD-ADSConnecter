@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'ads',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
