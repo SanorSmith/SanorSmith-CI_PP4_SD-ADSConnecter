@@ -17,8 +17,9 @@
   - [Fonts](#fonts)
   - [Structure](#structure)
     - [Database Models](#database)
-    - [User Model](#user-model)
+    - [User Model](#user-model-djangos-built-in-model)    
   - [Wireframes](#wireframes)
+  - [Agile Design](#agile-design)
 - [Technologies Used](#technologies-used)
 - [Features](#features)
 - [Validation](#validation)
@@ -407,8 +408,8 @@ Despite being implemented as a solo project, which initially felt out of place d
 #### Epics
 Five epics were created for the project, using GitHub Milestones and linking user stories to specific tasks for better organization and tracking of progress. 
 <details><summary>See epics</summary>
-<img src="docs/features/epic.jpg">
-<img src="docs/features/epic-final.jpg">
+<img src="docs/features/epics.jpg">
+<img src="docs/features/epics-final.jpg">
 </details>
 
 #### User Stories
@@ -420,7 +421,7 @@ The initial phase involved creating a user story template using GitHub Issues, w
 <img src="docs/features/lables.jpg">
 </details>
 <details><summary>See User Story, Create Delete Account Template</summary>
-<img src="docs/features/create-delete-account-template">
+<img src="docs/features/create-delete-account-template.jpg">
 </details>
 
 #### Kanban Board
