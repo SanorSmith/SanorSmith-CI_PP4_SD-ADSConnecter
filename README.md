@@ -16,8 +16,8 @@
   - [Colors](#colors)
   - [Fonts](#fonts)
   - [Structure](#structure)
-    - [Website Pages](#website-pages)
-    - [Database Models](#database-models)
+    - [Database Models](#database)
+    - [User Model](#user-model)
   - [Wireframes](#wireframes)
 - [Technologies Used](#technologies-used)
 - [Features](#features)
@@ -80,8 +80,6 @@ The Advertisement Service is a web-based platform designed for creating, managin
 - Access to promotional offers and discounts.
 
 ##### Back to [top](#table-of-contents)
-
-## User Stories
 
 ## User Stories
 
@@ -273,7 +271,6 @@ These models provide the fundamental data structure for user profiles, service l
 
 ### Wireframes
 
-### Wireframes
 
 <details><summary>Big screens - laptop & desktop</summary>
 
@@ -400,7 +397,62 @@ These models provide the fundamental data structure for user profiles, service l
 
 </details>
 
+### Agile Design
 
+#### About
+The Agile methodology was applied to this project to facilitate iterative development and continuous improvement. Although initially challenging, especially when trying to balance flexibility with a clear roadmap, the approach ultimately helped improve the development process. By adopting tools such as Milestones, Issues, GitHub Projects, and Boards, the project was structured around User Stories, Epics, and Sprints to manage tasks and timelines effectively.
+
+Despite being implemented as a solo project, which initially felt out of place due to Agile’s collaborative nature, the methodology proved effective for iterating and adapting to unexpected changes in the development cycle. It was necessary to adjust plans and priorities often, organizing tasks on the Kanban board to ensure critical issues were addressed promptly and development stayed on track.
+
+#### Epics
+Five epics were created for the project, using GitHub Milestones and linking user stories to specific tasks for better organization and tracking of progress. 
+<details><summary>See epics</summary>
+<img src="docs/features/epic.jpg">
+<img src="docs/features/epic-final.jpg">
+</details>
+
+#### User Stories
+The initial phase involved creating a user story template using GitHub Issues, which was then used to develop detailed user stories over time. Initially rough, these user stories evolved into more comprehensive guides as the project progressed.
+<details><summary>See User Story,  Home page design</summary>
+<img src="docs/features/homepage-design.jpg">
+</details>
+<details><summary>See User Story Ticket</summary>
+<img src="docs/features/lables.jpg">
+</details>
+<details><summary>See User Story, Create Delete Account Template</summary>
+<img src="docs/features/create-delete-account-template">
+</details>
+
+#### Kanban Board
+The Kanban board was used to track the project's status visually. Tasks were moved between columns to show progress from "To Do" to "In Progress" and "Done." While the board was underutilized initially, it ultimately proved valuable and will be a crucial tool in future projects.
+[Link to Project Kanban Board.](https://github.com/users/SanorSmith/projects/5/views/2?layout=board)
+<details><summary>See Kanban Board</summary>
+<img src="docs/features/kanban-board.jpg">
+</details>
+
+#### Moscow Prioritization
+The Moscow prioritization technique was applied to help prioritize project requirements based on their importance and urgency. Though not perfectly implemented in the beginning, it helped focus efforts on the most critical tasks, ensuring they were tackled first.
+<details><summary>See Image</summary>
+<img src="docs/features/moscow.jpg">
+</details>
+
+#### Sprints
+Agile sprints were used to focus on specific tasks within time-boxed iterations. Although the first sprint didn't go as smoothly as hoped, it provided valuable insights that will improve the execution of future sprints.
+
+##### 1st Sprint
+- Tasks and User Stories in the First Sprint:
+  - Create new Django project and app (development task)
+  - Install Django and supporting libraries (development task)
+  - Deploy empty project to Heroku (development task)
+  - USER STORY 1 (development task)
+- Development time: 9 days
+
+##### Closing Thoughts on Agile:
+"Implementing Agile for the first time in the Service Tisement project presented several challenges, especially since the project was developed by a single developer. Agile is inherently designed for collaborative and fast-paced environments, and applying it as a solo developer made the process feel less intuitive. However, the lessons learned from overcoming these obstacles and continuously adjusting the approach have laid a solid foundation for using Agile more effectively in future projects. The experience emphasized the importance of flexibility, iterative improvement, and adapting to changes, which are key principles in Agile methodology. This project now serves as a valuable reference for refining Agile practices in subsequent endeavors.
+
+---
+
+##### Back to [top](#table-of-contents)
 
 ## Technologies Used
 
