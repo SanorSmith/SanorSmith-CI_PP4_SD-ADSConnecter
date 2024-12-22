@@ -273,6 +273,135 @@ These models provide the fundamental data structure for user profiles, service l
 
 ### Wireframes
 
+### Wireframes
+
+<details><summary>Big screens - laptop & desktop</summary>
+
+<details><summary>Add New Service</summary>
+<img src="docs/wireframes/add_new_service_desk.jpeg" >
+</details>
+
+<details><summary>Available Services</summary>
+<img src="docs/wireframes/available_services_desk.jpeg">
+</details>
+
+<details><summary>Filter Search</summary>
+<img src="docs/wireframes/filter_search_desk.jpeg">
+</details>
+
+<details><summary>Home Page</summary>
+<img src="docs/wireframes/home_desk.jpeg">
+</details>
+
+<details><summary>Operations</summary>
+<img src="docs/wireframes/operations_desk.jpeg">
+</details>
+
+<details><summary>Pop-up Remove Message</summary>
+<img src="docs/wireframes/pop_up_remove_message_desk.jpeg">
+</details>
+
+<details><summary>Register</summary>
+<img src="docs/wireframes/register_desk.jpeg">
+</details>
+
+<details><summary>Remove Account</summary>
+<img src="docs/wireframes/remove_account_desk.jpeg">
+</details>
+
+<details><summary>Sign In</summary>
+<img src="docs/wireframes/sign_in_desk.jpeg">
+</details>
+
+</details>
+
+***
+
+
+<details><summary>Medium screens - tablet</summary>
+
+<details><summary>Home Page</summary>
+<img src="docs/wireframes/home_tab.jpeg" >
+</details>
+
+<details><summary>Operations</summary>
+<img src="docs/wireframes/operations_tab.jpeg">
+</details>
+
+<details><summary>Pop-up Remove Message</summary>
+<img src="docs/wireframes/pop_up_remove_message_tab.jpeg">
+</details>
+
+<details><summary>Register</summary>
+<img src="docs/wireframes/register_tab.jpeg">
+</details>
+
+<details><summary>Remove Account</summary>
+<img src="docs/wireframes/remove_account_tab.jpeg">
+</details>
+
+<details><summary>Sign In</summary>
+<img src="docs/wireframes/sign_in_tab.jpeg">
+</details>
+
+<details><summary>Add New Service</summary>
+<img src="docs/wireframes/add_new_service_tab.jpeg">
+</details>
+
+<details><summary>Available Services</summary>
+<img src="docs/wireframes/available_services_tab.jpeg">
+</details>
+
+<details><summary>Filter Search</summary>
+<img src="docs/wireframes/filter_search_tab.jpeg">
+</details>
+
+</details>
+
+***
+
+<details><summary>Mobile Screens</summary>
+
+<details><summary>Home Page</summary>
+<img src="docs/wireframes/home_mob.jpeg" >
+</details>
+
+<details><summary>Operations</summary>
+<img src="docs/wireframes/operations_mob.jpeg">
+</details>
+
+<details><summary>Pop-up Remove Message</summary>
+<img src="docs/wireframes/pop_up_remove_message_mob.jpeg">
+</details>
+
+<details><summary>Register</summary>
+<img src="docs/wireframes/register_mob.jpeg">
+</details>
+
+<details><summary>Remove Account</summary>
+<img src="docs/wireframes/remove_account_mob.jpeg">
+</details>
+
+<details><summary>Sign In</summary>
+<img src="docs/wireframes/sign_in_mob.jpeg">
+</details>
+
+<details><summary>Add New Service</summary>
+<img src="docs/wireframes/add_new_service_mob.jpeg">
+</details>
+
+<details><summary>Available Services</summary>
+<img src="docs/wireframes/available_services_mob.jpeg">
+</details>
+
+<details><summary>Filter Search</summary>
+<img src="docs/wireframes/filter_search_mob.jpeg">
+</details>
+
+</details>
+
+
+
 ## Technologies Used
 
 ### Languages & Frameworks
