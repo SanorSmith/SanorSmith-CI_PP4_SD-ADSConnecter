@@ -476,6 +476,7 @@ Agile sprints were used to focus on specific tasks within time-boxed iterations.
 - [Visual Studio Code (VSCode)](https://code.visualstudio.com/) - Main code editor used for development.
 - [Git](https://git-scm.com/) - Version control system for tracking changes and collaboration.
 - [GitHub](https://github.com/) - Hosted the project's code repository.
+- [Uizard](https://app.uizard.io/) - Create wireframes for the projuct.
 
 ### Development & Testing Tools
 
