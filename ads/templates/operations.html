@@ -22,7 +22,8 @@
                 </div>
                 <div class="card-actions">
                     <!-- Edit Button -->
-                    <a href="{% url 'edit_service_form' service.id %}" class="btn btn-secondary">Edit</a>
+                    <a href="javascript:void(0)" onclick="showEditService(this)" data-id="{{ service.id }}" class="btn btn-secondary">Edit</a>
+
 
                     <!-- Remove Service Form -->
                     <form method="POST" action="{% url 'remove_service' service.id %}" style="display:inline;">
